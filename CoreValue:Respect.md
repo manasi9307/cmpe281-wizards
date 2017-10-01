@@ -1,5 +1,6 @@
 Pooja's wiki 
 XP Core Value: Respect 
+Week 1
 A significant value that underlies the way we work is respect towards the fellow project mates.
 There are many components for this core value. 
 For instance, one of my teammate commutes a long way to participate in project meetings and other discussions. 
