@@ -7,3 +7,7 @@ Should we notify everyone that we are placing the order and give them a way for 
 final order? Receiving validation from everyone who has access to the  cart is an overhead. Instead we decided to send out 
 a group notification at the time of creation of the cart and simply place a timer on the cart visible to everyone,
 after which order will be final. Simple and efficient.
+
+Week 2: While discussing the use case flow we came across the situation about what the user will see in the cart when he opens it, 
+the entire order for everyone or just what he has ordered. For simplicity's sake we decided that the user views only what he orders 
+so he can only see and alter what he has ordered and not mess with the entire order.
