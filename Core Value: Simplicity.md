@@ -11,3 +11,7 @@ after which order will be final. Simple and efficient.
 Week 2: While discussing the use case flow we came across the situation about what the user will see in the cart when he opens it, 
 the entire order for everyone or just what he has ordered. For simplicity's sake we decided that the user views only what he orders 
 so he can only see and alter what he has ordered and not mess with the entire order.
+
+Week 3:
+While designing our databases and use cases we took care of avoiding redundant cases and attributes. This will help us maintain integrity of 
+the data in the future.
