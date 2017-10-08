@@ -21,6 +21,12 @@ In case of difference of opinion,handle it in a professional and respectful mann
 For instance, we collaborated on ideas to design ER diagram and the flow of the application. 
 Considered each person's suggestion weighing the pros and cons and arrived at the final template.
 
+Week 3
 
+It is important to asses your team. 
+Find out the skills of each member and then distribute work based on that. 
+Each member is able to contribute to the project and is valued for his work.
+For instance in our project, we have distributed the work based on each of our teammate skills from their previous projects.
+For this we had to take everyone's opinion into consideration and modularize the project requirements.
 
 
