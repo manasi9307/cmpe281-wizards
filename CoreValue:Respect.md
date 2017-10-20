@@ -29,4 +29,12 @@ Each member is able to contribute to the project and is valued for his work.
 For instance in our project, we have distributed the work based on each of our teammate skills from their previous projects.
 For this we had to take everyone's opinion into consideration and modularize the project requirements.
 
+Week 4
+
+Without a culture of mutual respect for all, people will not come together as a team. 
+In the absence of respect for each other’s work, the team may not perform it's best.
+So we as a team try our best to respect each person's work and value their contribution.
+
+
+
 
