@@ -18,3 +18,7 @@ The team communicated previous weeks completed tasks and the issues that have ar
 Week-3
 
 The team discussed about the implemetation of each of their respective modules. Each of us communicated with all, the implemetation of their module and discuused better ways to implement the same. We discussed and created the ER diagram representing our database. The team has been regularly updating each other with any progress and issues encountered in each of ours individual work.
+
+Week-4
+
+Communication is a very important aspect of any project develpment. All the team memebers must be on the same page as to what is happenng in the projects, what issues are present and what is the progress of various modules of the project. Our team has been meeting up regurlary to discuss these points. We have shared and discussed each topics reseached by each member. This week we discussed on the implementation the database and how it would be intereacting once deployed on cloud.
