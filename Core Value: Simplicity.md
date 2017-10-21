@@ -15,3 +15,7 @@ so he can only see and alter what he has ordered and not mess with the entire or
 Week 3:
 While designing our databases and use cases we took care of avoiding redundant cases and attributes. This will help us maintain integrity of 
 the data in the future.
+
+Week 4: 
+We decided to limit the number of options on the menu so that they all fit on the same screen and the focus can be maintained on the 
+core functionalities and not concern ourselves with alignment, etc problems on the UI.
