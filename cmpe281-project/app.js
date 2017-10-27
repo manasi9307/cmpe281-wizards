@@ -6,6 +6,7 @@
 var express = require('express')
   , routes = require('./routes')
   , payment = require('./routes/payment')
+    , success = require('./routes/successpay')
   , http = require('http')
   , path = require('path');
 
@@ -29,6 +30,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.post('/payment', payment.payment);
+app.post('/successpay', success.success);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
