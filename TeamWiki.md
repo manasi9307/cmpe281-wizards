@@ -21,7 +21,7 @@ Decided on:
 
 Planned to explore about different technologies to implement the project.
 
-
+----------------------------------------------------------------------------------------------------------------------------------
 
 
 # Team Meetings
@@ -112,5 +112,34 @@ We plan to publish our MongoDB databases. Also, research on how to deploy and co
 #### What are the current blockers/challenges the team is facing?
 
 The challenge we are facing this week is figuring out how our databases will talk to each other.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+# Team Meetings
+
+#### Date: 10-24-2017  
+
+Duration: 3 hours 
+
+Noted by: Anjana Pradeep
+
+Agenda:
+Discussed and started with the code implementation
+
+Outcome:
+* Decided on what needs to be implemenetd by te end of this week.
+* Started implemnentation of each module in nodejs.
+
+#### What did the team do the past week? 
+The team created a local database to begin the implementation on the project. Also each member set up mongodb on EC2 instances from their respective AWS accounts.
+
+
+#### What is the team going to do next week?
+
+We have decided to complete the basic implementation of each module and try to intergrate these partially completed modules.
+
+#### What are the current blockers/challenges the team is facing?
+
+The challenge which we are facing for this week is to connect to mongodb remotely in order to access data from each others databse hosted on EC2
 
 
