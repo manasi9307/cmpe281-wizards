@@ -2,7 +2,7 @@ var ejs = require("ejs");
 var mongo = require("./mongo");
 var mongoURL = "mongodb://localhost:27017/project281";
 
-function check(req,res){
+function updatestatus(req,res){
     mongo.connect(mongoURL, function(){
         console.log('Connected to mongo at: ' + mongoURL);
         var col1 = mongo.collection('cart_details');
@@ -10,23 +10,14 @@ function check(req,res){
         col1.findOne({user_id: 1}, function(err, cart){
             if (cart) {
            	console.log("USER: "+cart.total);
-           	res.render('payment.ejs',{ total: cart.total });
+           	res.render('successpay.ejs',{ total: cart.total });
             } else {
             	res.render('error.ejs');
             }
         });
-        
-        
-       /* coll.findOne({user_id: 1}, function(err, details){
-            if (user) {
-           	console.log("USER: "+user.name+" College:"+user.college);
-           	res.render('payment.ejs');
-            } else {
-            	res.render('error.ejs');
-            }
-        });*/
+
     });  
 }
 
 
-exports.payment=check;
+exports.success=updatestatus;

@@ -4,6 +4,16 @@
     <title>Demo3</title>
   </head>
   <body>
-  <h1>Success</h1>
+  <h1>Payment</h1>
+  Total amount: <%= total%>
+  <h3>Enter card details</h3>
+  <form method="post" action="successpay">
+ Card type: <br/> 
+ <input type="radio" name="mode" value="debit"> Debit card <br/>
+ <input type="radio" name="mode" value="credit"> Credit card <br/>
+  Card Number: <br/>
+  <input type="text" id="cardno" name="cardno" autocomplete="off"><br/>
+  <input type="submit" value="Continue">
+  </form>
   </body>
 </html>
