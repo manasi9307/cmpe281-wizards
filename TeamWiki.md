@@ -117,6 +117,32 @@ The challenge we are facing this week is figuring out how our databases will tal
 
 # Team Meetings
 
+#### Date: 10-17-2017
+
+Duration: 1 hour 
+
+Noted by: Pooja Shivasharanappa
+
+Agenda:
+Database implementation
+
+Outcome
+Created a local database.
+Set up mongodb on EC2 instance individually.
+
+
+#### What did the team do the past week?
+We created the ER diagram for database creation, Use case diagram and UI wireframes.
+
+#### What is the team going to do next week?
+Code implementation and trying to connect mongodb remotely.
+
+#### What are the current blockers/challenges the team is facing?
+The challenge we faced was to come up with a way to let multiple users access a single cart.
+
+--------------------------------------------------------------------------------------------------------------------------
+# Team Meetings
+
 #### Date: 10-24-2017  
 
 Duration: 3 hours 
