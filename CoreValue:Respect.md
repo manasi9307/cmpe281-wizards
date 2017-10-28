@@ -35,6 +35,10 @@ Without a culture of mutual respect for all, people will not come together as a 
 In the absence of respect for each other’s work, the team may not perform it's best.
 So we as a team try our best to respect each person's work and value their contribution.
 
+Week 5
+
+We faced a challenging task this week to setup mongo on ec2. 
+As a team,we co-ordinated and contributed equally towards resolving the issue.
 
 
 
