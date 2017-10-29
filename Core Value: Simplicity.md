@@ -19,3 +19,6 @@ the data in the future.
 Week 4: 
 We decided to limit the number of options on the menu so that they all fit on the same screen and the focus can be maintained on the 
 core functionalities and not concern ourselves with alignment, etc problems on the UI.
+
+Week 5:
+We decided to create a master-test branch to integrate all our changes and test before we send it to the main master branch.
