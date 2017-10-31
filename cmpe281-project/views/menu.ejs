@@ -4,6 +4,13 @@
     <title>Menu</title>
   </head>
   <body>
-  <h1>Items</h1>
+<ul >
+  <% for(var i=0; i<menu.length; i++) {%>
+    <li >
+      <span><%= menu[i].product_name %></span>
+      <span><%= menu[i].price %></span>
+    </li>
+  <% } %>
+</ul>
   </body>
 </html>
