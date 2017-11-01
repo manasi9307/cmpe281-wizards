@@ -7,7 +7,7 @@ function check(req,res){
         console.log('Connected to mongo at: ' + mongoURL);
         var col1 = mongo.collection('cart_details');
         
-        col1.findOne({user_id: 1}, function(err, cart){
+        col1.findOne({user_id: 1,cart_id:1}, function(err, cart){
             if (cart) {
            	console.log("USER: "+cart.total);
            	res.render('payment.ejs',{ total: cart.total });
@@ -15,16 +15,6 @@ function check(req,res){
             	res.render('error.ejs');
             }
         });
-        
-        
-       /* coll.findOne({user_id: 1}, function(err, details){
-            if (user) {
-           	console.log("USER: "+user.name+" College:"+user.college);
-           	res.render('payment.ejs');
-            } else {
-            	res.render('error.ejs');
-            }
-        });*/
     });  
 }
 
