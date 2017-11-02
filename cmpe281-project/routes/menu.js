@@ -10,7 +10,22 @@ function menus(req,res){
         coll.find().toArray(function(err, menu){
             if (menu) {
            	//console.log("USER: "+user.name+" College:"+user.college);
-           	res.render('menu.ejs', {menu:menu});
+            	var menu1=[], menu2=[], menu3=[], menu4=[];
+            	menu.forEach(function(item) {
+            		if(item.category_id==1){
+            		   menu1.push(item);
+            	}
+            		if(item.category_id==2){
+             		   menu2.push(item);
+             	}
+            		if(item.category_id==3){
+             		   menu3.push(item);
+             	}
+            		if(item.category_id==4){
+             		   menu4.push(item);
+             	}
+            		});
+           	res.render('menu.ejs', {menu1:menu1,menu2:menu2,menu3:menu3,menu4:menu4, menu:menu });
             } else {
             	res.render('error.ejs');
             }
