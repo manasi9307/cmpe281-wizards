@@ -25,6 +25,11 @@ var user_details = [{
   "cart_id": 1
 }};
  var total=0;
+//check if the user is prime user and then redirect him to payment page or just display the contents of the particular user
+                    coll.findOne({user_details.user_id}),function(err, user){
+                    if(user){
+                    if(user.flag==1){
+                                     
 for(var i=0;i<cart_items.length;i++){
   coll.findOne({product_name: cart_item[i].item}, function(err, user){
             if (user) {
@@ -38,6 +43,9 @@ for(var i=0;i<cart_items.length;i++){
     });
 
 }
+}else{
+ 
+}}
 
 }
 exports.payment=check;
