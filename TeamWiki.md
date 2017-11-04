@@ -169,3 +169,30 @@ We have decided to complete the basic implementation of each module and try to i
 The challenge which we are facing for this week is to connect to mongodb remotely in order to access data from each others databse hosted on EC2
 
 
+# Team Meetings
+
+#### Date: 11-04-2017  
+
+Duration: 3 hours 
+
+Noted by: Manasi Vinay Thakur
+
+Agenda:
+Discussed regarding integration of different modules
+
+Outcome:
+* Decided on what needs to be implemenetd by te end of this week.
+* Strategy for integration of different modules.
+
+#### What did the team do the past week? 
+The team started with code implementation of the respective modules.
+
+#### What is the team going to do next week?
+
+Integration of the different modules and how they would interact with each other.
+
+#### What are the current blockers/challenges the team is facing?
+
+The challenge which we are facing for this week is integration of various modules and their interaction with each other
+
+
