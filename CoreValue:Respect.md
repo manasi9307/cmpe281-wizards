@@ -40,5 +40,7 @@ Week 5
 We faced a challenging task this week to setup mongo on ec2. 
 As a team,we co-ordinated and contributed equally towards resolving the issue.
 
+Week 6
 
+Each member is working on their module. But when I was facing with an issue to handle mongo insertion, my teammates helped me to resolve the error. So as a team it is easier to debug errors and resolve errors we come across.
 
