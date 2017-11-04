@@ -11,3 +11,5 @@ Week 3:Through constant feedback of their previous efforts, team can identify th
 Week 4: Feedback is an integral part of any project.The open communication allows each member to improve and perform better. In this week's team meeting we discussed about design and creation of the database for our application.Every team member provided their feedback on design of the database and fields of the database.
 
 Week 5: Feedback is an essential tool for any successful project deliveries.In this week each team member provided their feedback on implementation of the modules owned by each member.Every team member provided feedback on the approach we would use to integrate all our modules and then deploy on ec2 instance.
+
+Week 6:Through the constant feedback team was able to discuss the problem faced by each member while implementation of the individual module.Every team member provided feedback on  how the different modules will be integrated and possibilties of the errors that we will face while integration. 
