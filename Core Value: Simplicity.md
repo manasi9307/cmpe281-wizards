@@ -22,3 +22,8 @@ core functionalities and not concern ourselves with alignment, etc problems on t
 
 Week 5:
 We decided to create a master-test branch to integrate all our changes and test before we send it to the main master branch.
+
+
+Week 6:
+We decided to integrate all the code written so far so that future development can be syncronized. 
+
