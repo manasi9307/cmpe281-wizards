@@ -21,4 +21,12 @@ The team discussed about the implemetation of each of their respective modules. 
 
 Week-4
 
-Communication is a very important aspect of any project develpment. All the team memebers must be on the same page as to what is happenng in the projects, what issues are present and what is the progress of various modules of the project. Our team has been meeting up regurlary to discuss these points. We have shared and discussed each topics reseached by each member. This week we discussed on the implementation the database and how it would be intereacting once deployed on cloud.
+Communication is a very important aspect of any project development. All the team memebers must be on the same page as to what is happenng in the projects, what issues are present and what is the progress of various modules of the project. Our team has been meeting up regurlary to discuss these points. We have shared and discussed each topics reseached by each member. This week we discussed on the implementation the database and how it would be intereacting once deployed on cloud.
+
+Week-5
+
+The team has been continuously discussing about the implementation of their respective modules. We discussed about the various issues that each one faced last week and approaches to resolve them. We discussed about how to implement the modules locally and then intergrate and deploy on EC2 instance.
+
+Week-6
+
+The team has been communicating regularly about the implementation of their respective module. We discussed about the issues faced by each during implementation and figured out methods to resolve them. We aslo discussed about integration of the modules and how they woulld interact with each other to handle user requests.
