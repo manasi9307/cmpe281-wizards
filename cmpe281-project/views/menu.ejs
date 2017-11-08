@@ -4,6 +4,99 @@
     <title>Menu</title>
   </head>
   <body>
-  <h1>Items</h1>
+  <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+  
+<ul class="menu">
+<table style="width:100%">
+
+<div>
+<tr align="left" >
+<th font-size="24px">
+Indian
+</th>
+</tr>
+
+  <% for(var i=0; i<menu1.length; i++) {%>
+  <tr >
+    <td >
+      <span><%= menu1[i].product_name %></span>
+      </td>
+      <td padding="20px">
+      <span><%= menu1[i].price %></span>
+    </td> 
+    <td padding="20px">
+    <button type="button" class="btn btn-outline-success">Add to cart</button>
+    </td>
+     </tr>  
+      <% } %>
+       </div>
+       <div>
+       <tr><td> 
+         </td></tr>
+       <tr align="left">
+<th>
+Italian
+</th>
+</tr>
+      <% for(var i=0; i<menu2.length; i++) {%>
+      <tr >
+    <td >
+      <span><%= menu2[i].product_name %></span>
+       </td>
+      <td>
+      <span><%= menu2[i].price %></span>
+     </td>
+     <td>
+    <button type="button" class="btn btn-outline-success">Add to cart</button>
+    </td> 
+     </tr>
+      <% } %>
+      </div>
+      <div>
+        <tr><td> 
+         </td></tr>
+      <tr align="left">
+<th>
+Chinese
+</th>
+</tr>
+      <% for(var i=0; i<menu3.length; i++) {%>
+      <tr>
+    <td >
+      <span><%= menu3[i].product_name %></span>
+       </td>
+      <td>
+      <span><%= menu3[i].price %></span>
+    </td> 
+    <td>
+    <button type="button" class="btn btn-outline-success">Add to cart</button>
+    </td>
+     </tr>
+      <% } %>
+      </div>
+      <div>
+        <tr><td> 
+         </td></tr>
+            <tr align="left">
+<th>
+Mexican
+</th>
+</tr>
+      <% for(var i=0; i<menu4.length; i++) {%>
+        <tr>
+    <td >
+      <span><%= menu4[i].product_name %></span>
+       </td>
+      <td>
+      <span><%= menu4[i].price %></span>
+    </td> 
+    <td>
+    <button type="button" class="btn btn-outline-success">Add to cart</button>
+    </td>
+     </tr>
+  <% } %>
+  </div>
+  </table>
+</ul>
   </body>
 </html>
