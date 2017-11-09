@@ -4,46 +4,80 @@ var mongoURL = 'mongodb://34.215.109.198:27017/trial';
 function cart(req,res){
     mongo.connect(mongoURL, function(){
         console.log('Connected to mongo at: ' + mongoURL);
-        var coll = mongo.collection('col');
-         var cart_items =[ {
-"item":"Noodles",
+        // to access cart_details collection
+        var cart_col = mongo.collection('cart_details');
+        
+        // to access product_catalog collection
+        var product_col = mongo.collection('product_catalog');
+        // to access user_order collection
+        var userOrder_col = mongo.collection('user_oder');
+        //cart_details json with user_id,cart_id and the items list sent 
+         var cart_details =[
+             "user_id":1,
+             "cart_id":1,
+       items:[      {
+"name":"Noodles",
 "cost" :2,
 "quantity":3
 },
 {
-"item":"Fried Rice",
+"name":"Fried Rice",
 "cost":3,
 "quantity":1
 }
 {
-"item":"Egg Rolls",
+"name":"Egg Rolls",
 "cost":2,
 "quantity":1
 }];
-var user_details = [{
-  "user_id": 1,
-  "cart_id": 1,
-    "status": "open"
-}};
- var total=0;
-// insert the details into the db
-  coll.insert({cart_id: user_details.item, user_id: user_details.user_id,status : user_details.status}, function(err, user){
+             
+                    
+ var total=0; // total to find the total cost of all the items in the cart
+ var product;             
+ // calculate total cost for the cart_items list
+ // for loop to iterate through each item ordered in cart_details json                   
+                    for(i=0;i < cart_details.items.length; i++){
+                    // query database for the cart_item
+                    product_col.find({product_name:cart_details.items[i].name},function(err,products)
+                    {
+                    //products holds the details of the item ordered
+                      if(products)
+                    {
+                        product=products.product_id;
+                      
+                      console.log("successful querying of product");
+                      //calculate the cost using price fetched from the query and find the total cost using quantity and cost
+                      total = cart_details.items[i].quantity * products.price ;
+                    }else
+                      //console the error
+                    {
+                        console.log("failed operation");
+                    }
+                    });
+                    }
+// insert the details into the cart_details collection
+  cart_col.insert({cart_id: cart_details.cart_id, user_id: cart_details.user_id,status : cart_details.status,total:total}, function(err, user){
          
         if (user) {
-          console.log('SuCCESS');
-          res.code = '200';
-          res.value = '1';
+          
+          console.log("successful insertion");
           
         } else {
           console.log('ERROR');
-          res.code = '401';
-          res.value = '0';
-         
+          
         }
       
     });
 
-
+//insert the details into user_order collection
+        userOrder.insert({multiuser_id:cart_details.user_id,cart_id:cart_details.cart_id,product_id:product},function(err,results){
+            if(result){
+                console.log("successful insertion");
+            }else{
+                console.log("Failed insertion");
+            }
+        }
+                         );
 
 
 //check if the user is prime user and then redirect him to payment page or just display the contents of the particular user
@@ -63,4 +97,4 @@ var user_details = [{
     });                         
 
 }
-exports.payment=check;
+exports.cart=cart;
