@@ -2,28 +2,42 @@
 <html>
   <head>
     <title>Demo3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
   <h1>WELCOME</h1>
   <h1>UID: <%= uid%><h1>
+
   <form method="post" action="/createcartid">
-    <input type="text" id="uid" name="uid" autocomplete="off" style="visibility:hidden" value=<%= uid%> ></br>
-Generate new cart id: Email: <input type="submit" class="btn btn-info" value="Generate">
+
+    <input type="text"  id="uid" name="uid" autocomplete="off" style="visibility:hidden" value=<%= uid%> ></br>
+
+
+Generate new cart id: Email: <input type="submit"  class="btn btn-info" value="Generate">
  </form>
-
-<table>
+<div class="container">
+<table class="table table-striped">
+<thead>
 <tr>
-<td>CartID</td>
-<td>Status</td>
+<th>CartID</th>
+<th>Status</th>
 </tr>
+</thead>
+<tbody>
 <tr>
   <td>11</td>
   <td>11</td>
 </tr>
+</tbody>
 </table>
+</div>
 
-Use a cart: <input type="text" id="cartid" name="cartid" autocomplete="off">
+Use a cart: <input type="text"  id="cartid" name="cartid" autocomplete="off">
 <input type="submit" class="btn btn-info" value="Start">
 
+</div>
   </body>
 </html>
