@@ -44,3 +44,7 @@ Week 6
 
 Each member is working on their module. But when I was facing with an issue to handle mongo insertion, my teammates helped me to resolve the error. So as a team it is easier to debug errors and resolve errors we come across.
 
+Week 7
+
+Team integrated the code we have worked on and faced some deployment issues. Contacted the professor regarding the same as we are not clear on the deliverable.
+

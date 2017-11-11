@@ -195,4 +195,29 @@ Integration of the different modules and how they would interact with each other
 
 The challenge which we are facing for this week is integration of various modules and their interaction with each other
 
+# Team Meetings
+
+#### Date: 11-08-2017  
+
+Duration: 3 hours 
+
+Noted by: Pooja Shivasharanappa
+
+Agenda:
+Discussed regarding 
+
+Outcome:
+* Faced some issues during integration as there was a discrepancy between the data models.
+* Conflicts due to github merge.
+
+#### What did the team do the past week? 
+The team completed the code implementation of the respective modules and began integration.
+
+#### What is the team going to do next week?
+
+We are facing issues with respect to deployment of our code on AWS. Focus on resolving that.
+
+#### What are the current blockers/challenges the team is facing?
+
+The challenge which we are facing for this week is the conflict on github merge and unclear about deployment model on AWS.
 
