@@ -26,3 +26,7 @@ Communication is a very important aspect of any project development. All the tea
 Week-5
 
 The team has been continuously discussing about the implementation of their respective modules. We discussed about the various issues that each one faced last week and approaches to resolve them. We discussed about how to implement the modules locally and then intergrate and deploy on EC2 instance.
+
+Week-6
+
+The team has been communicating regularly about the implementation of their respective module. We discussed about the issues faced by each during implementation and figured out methods to resolve them. We aslo discussed about integration of the modules and how they woulld interact with each other to handle user requests.
