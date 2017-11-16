@@ -1,7 +1,7 @@
 var ejs = require('ejs');
 var mongo = require('./mongo');
-var mongoURL = 'mongodb://34.215.109.198:27017/trial';
-function cart(req,res){
+var mongoURL = 'mongodb://localhost:27017/trial';
+/*function cart(req,res){
     mongo.connect(mongoURL, function(){
         console.log('Connected to mongo at: ' + mongoURL);
         // to access cart_details collection
@@ -12,7 +12,7 @@ function cart(req,res){
         // to access user_order collection
         var userOrder_col = mongo.collection('user_oder');
         //cart_details json with user_id,cart_id and the items list sent 
-         var cart_details =[
+         /*var cart_details =[
              "user_id":1,
              "cart_id":1,
        items:[      {
@@ -30,7 +30,7 @@ function cart(req,res){
 "cost":2,
 "quantity":1
 }];
-             
+           
                     
  var total=0; // total to find the total cost of all the items in the cart
  var product;             
@@ -96,5 +96,5 @@ function cart(req,res){
         });
     });                         
 
-}
-exports.cart=cart;
+}*/
+//exports.cart=cart;

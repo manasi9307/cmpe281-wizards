@@ -12,11 +12,8 @@
   <h1>UID: <%= uid%><h1>
 
   <form method="post" action="/createcartid">
-
-    <input type="text"  id="uid" name="uid" autocomplete="off" style="visibility:hidden" value=<%= uid%> ></br>
-
-
-Generate new cart id: Email: <input type="submit"  class="btn btn-info" value="Generate">
+  <input type="text" id="uid" name="uid" autocomplete="off" style="visibility:hidden" value=<%= uid%> ></input></br>
+Generate new cart id: <input type="submit"  class="btn btn-info" value="Generate">
  </form>
 <div class="container">
 <table class="table table-striped">
@@ -35,9 +32,10 @@ Generate new cart id: Email: <input type="submit"  class="btn btn-info" value="G
 </table>
 </div>
 
+<form method="post" action="/menu">
 Use a cart: <input type="text"  id="cartid" name="cartid" autocomplete="off">
-<input type="submit" class="btn btn-info" value="Start">
+<input type="submit" class="btn btn-info" value="Start" >
+</form>
 
-</div>
   </body>
 </html>
