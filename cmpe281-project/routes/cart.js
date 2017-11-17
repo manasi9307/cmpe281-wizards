@@ -1,7 +1,7 @@
 var ejs = require('ejs');
 var mongo = require('./mongo');
-var mongoURL = 'mongodb://localhost:27017/trial';
-/*function cart(req,res){
+var mongoURL = 'mongodb://34.215.109.198:27017/trial';
+function cart(req,res){
     mongo.connect(mongoURL, function(){
         console.log('Connected to mongo at: ' + mongoURL);
         // to access cart_details collection
@@ -10,9 +10,9 @@ var mongoURL = 'mongodb://localhost:27017/trial';
         // to access product_catalog collection
         var product_col = mongo.collection('product_catalog');
         // to access user_order collection
-        var userOrder_col = mongo.collection('user_oder');
+        var userOrder_col = mongo.collection('user_oder');});
         //cart_details json with user_id,cart_id and the items list sent 
-         /*var cart_details =[
+         var cart_details =[
              "user_id":1,
              "cart_id":1,
        items:[      {
@@ -30,7 +30,7 @@ var mongoURL = 'mongodb://localhost:27017/trial';
 "cost":2,
 "quantity":1
 }];
-           
+             
                     
  var total=0; // total to find the total cost of all the items in the cart
  var product;             
@@ -81,20 +81,16 @@ var mongoURL = 'mongodb://localhost:27017/trial';
 
 
 //check if the user is prime user and then redirect him to payment page or just display the contents of the particular user
-                    coll.findOne({user_details.user_id}),function(err, user){
+                    coll.findOne({user_details.user_id},function(err, user){
                     if(user){
-                    if(user.flag==1){
-                        for(var i=0;i<cart_items.length;i++){
-  coll.findOne({product_name: cart_item[i].item}, function(err, user){
-            if (user) {
-           	//console.log("USER: "+user.name+" College:"+user.college);
-            total= total+user.price;
-           	res.render('payment.ejs');
-            } else {
-            	res.render('error.ejs');
-            }
-        });
-    });                         
+                    if(user.flag==0){
+                        
+                        res.render("cart.ejs",{cart_details:cart_details});
+  } else{
+  res.render("payment.ejs",{total:total});
+  }}});
+  }
+                            
 
-}*/
-//exports.cart=cart;
+
+exports.cart=cart;
