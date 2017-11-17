@@ -3,11 +3,12 @@ var mongo = require("./mongo");
 var mongoURL = "mongodb://localhost:27017/project281";
 
 function check(req,res){
+	var uid=req.param("uid");
     mongo.connect(mongoURL, function(){
         console.log('Connected to mongo at: ' + mongoURL);
         var col1 = mongo.collection('cart_details');
         
-        col1.findOne({user_id: 1,cart_id:1}, function(err, cart){
+        col1.findOne({user_id: uid,cart_id:1}, function(err, cart){
             if (cart) {
            	console.log("USER: "+cart.total);
            	res.render('payment.ejs',{ total: cart.total });
