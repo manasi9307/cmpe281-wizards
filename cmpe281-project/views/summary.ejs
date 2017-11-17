@@ -8,33 +8,26 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
-  <h1>WELCOME</h1>
   <h1>UID: <%= uid%><h1>
 
-  <form method="post" action="/createcartid">
-  <input type="text" id="uid" name="uid" autocomplete="off" style="visibility:hidden" value=<%= uid%> ></input></br>
-Generate new cart id: <input type="submit"  class="btn btn-info" value="Generate">
- </form>
 <div class="container">
 <table class="table table-striped">
 <thead>
 <tr>
-<th>CartID</th>
-<th>Status</th>
+<th>Total</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>11</td>
-  <td>11</td>
+  <td><%= uid%></td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<form method="post" action="/menu">
-Use a cart: <input type="text"  id="cartid" name="cartid" autocomplete="off">
-<input type="submit" class="btn btn-info" value="Start" >
+<form method="post" action="/payment">
+<input type="text" id="uid" name="uid" autocomplete="off" style="visibility:hidden" value=<%= uid%> ></input></br>
+Make payment: <input type="submit" class="btn btn-info" value="Pay" >
 </form>
 
   </body>

@@ -1,10 +1,13 @@
+var category = require("category.ejs");
 var ejs = require("ejs");
 var mongo = require("./mongo");
 var mongoURL = "mongodb://localhost:27017/project281";
 var cartItems=[];
-var menu1=[], menu2=[], menu3=[], menu4=[], menuFinal=[], total=0.00;
+var menu1=[], menu2=[], menu3=[], menu4=[], menuFinal=[], total=0.00,cid=0;
+
 
 function menus(req,res){
+	cid=req.param("cartid");
 	mongo.connect(mongoURL, function(){
 		console.log('Connected to mongo at: ' + mongoURL);
 		var coll = mongo.collection('product_catalog');
@@ -30,6 +33,7 @@ function menus(req,res){
 					}
 
 				});
+				console.log("CID: "+cid);
 				res.render('menu.ejs', {menu1:menu1,menu2:menu2,menu3:menu3,menu4:menu4, cartItems:cartItems,total:total });
 			} else {
 				res.render('error.ejs');
@@ -51,12 +55,12 @@ function addToCart(req,res){
 			}else{
 				item.quantity=item.quantity+1;
 			}
-			
+			category.check(item.product_id)
 			total=total+item.price;
 		}
 
 	});
-
+	console.log("CID: "+cid);
 	res.render('menu.ejs', {menu1:menu1,menu2:menu2,menu3:menu3,menu4:menu4, cartItems:cartItems, total:total });
 
 }
@@ -73,7 +77,7 @@ function deleteFromCart(req,res){
 	            
 	        }
 	}
-
+	console.log("CID: "+cid);
 	res.render('menu.ejs', {menu1:menu1,menu2:menu2,menu3:menu3,menu4:menu4, cartItems:cartItems, total:total });
 
 }

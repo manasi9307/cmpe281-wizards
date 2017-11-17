@@ -1,15 +1,12 @@
 
-/**
- * Module dependencies.
- */
-
 var express = require('express')
   , routes = require('./routes')
   , payment = require('./routes/payment')
     , success = require('./routes/successpay')
   ,  menu=require('./routes/menu')
   ,  login=require('./routes/login')
-    ,  cartid=require('./routes/createcartid')
+      ,  getcartid=require('./routes/getcartid')  
+  ,  cartid=require('./routes/createcartid')
   ,  cart=require('./routes/cart')
   , http = require('http')
   , path = require('path');
@@ -53,6 +50,11 @@ app.post('/', function(req, res) {
 });
 app.post('/login', login.login);
 app.post('/createcartid', cartid.createcartid);
+app.post('/getcartid', getcartid.usecart);
+app.use('/menu', menu.menus);
+app.use('/addToCart', menu.addToCart);
+app.use('/deleteFromCart', menu.deleteFromCart);
+app.use('/confirmOrder', menu.confirmOrder);
 /*
 app.post('/payment', payment.payment);
 
