@@ -1,3 +1,4 @@
+var category = require("category.ejs");
 var ejs = require("ejs");
 var mongo = require("./mongo");
 var mongoURL = "mongodb://localhost:27017/project281";
@@ -54,7 +55,7 @@ function addToCart(req,res){
 			}else{
 				item.quantity=item.quantity+1;
 			}
-			
+			category.check(item.product_id)
 			total=total+item.price;
 		}
 
