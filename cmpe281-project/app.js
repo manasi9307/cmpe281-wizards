@@ -55,10 +55,10 @@ app.post('/login', login.login);
 app.post('/createcartid', cartid.createcartid);
 /*
 app.post('/payment', payment.payment);
-app.post('/cart', cart.cart);
+
 app.get('/menu', menu.menus);
 app.post('/successpay', success.success);*/
-
+app.post('/cart', cart.cart);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
