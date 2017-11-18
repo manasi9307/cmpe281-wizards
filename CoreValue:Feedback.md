@@ -15,3 +15,5 @@ Week 5: Feedback is an essential tool for any successful project deliveries.In t
 Week 6:Through the constant feedback team was able to discuss the problem faced by each member while implementation of the individual module.Every team member provided feedback on  how the different modules will be integrated and possibilties of the errors that we will face while integration. 
 
 Week 7:In this week team tried integration of various modules.Each team member provided their feedback on the problems faced during integration and the solution used to resolve those problems.
+
+Week 8:In this team created clusters of mongodb node on EC2. Each team member provided their valuable feedback on  various techniques to deploy Shopping Cart application on EC2 and issues that we would face while deployment on EC2.
