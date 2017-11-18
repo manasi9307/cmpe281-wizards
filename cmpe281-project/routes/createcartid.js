@@ -3,7 +3,9 @@ var mongo = require("./mongo");
 var mongoURL = "mongodb://localhost:27017/project281";
 
 function generate(req,res){
-var num=Math.random();
+var temp=Math.random();
+var num=temp*10000;
+num=Math.ceil(num);
 console.log("UID IN JS: "+req.param("uid"));
 var uid=req.param("uid");
 mongo.connect(mongoURL, function(){
@@ -16,19 +18,33 @@ res.render('error.ejs');
                  console.log("Failed signup---");
  res.render('error.ejs');
            //throw err;
-         }
+         }//if
          else{
-           res.render('home.ejs',{uid: uid });
+           res.render('home.ejs',{uid: uid});
                  console.log("Success");
 
-         }
-       });
+         }//else
+  var cursor = coll.find();
+  cursor.toArray(function(err,doc){
+    console.log(doc);
+    console.log("cart"+doc[0]._id)
+    res.render("home.ejs",{uid:doc._id,carts:doc});
+  });//each
+
+
+
+
+
        console.log("HELLO");
+  });//query
 
-});
 
+     });//mongo
 
 }
+
+
+
 
 
 exports.createcartid=generate;
