@@ -1,12 +1,17 @@
+
 var ejs = require("ejs");
 var mongo = require("./mongo");
 var mongoURL = "mongodb://localhost:27017/project281";
 var cartItems=[];
-var menu1=[], menu2=[], menu3=[], menu4=[], menuFinal=[], total=0.00,cid=0;
+var cart = require("./cart");
+var menu1=[], menu2=[], menu3=[], menu4=[], menuFinal=[], total=0.00,cid=0,uid=0;
 
 
 function menus(req,res){
+	console.log("HELLO");
 	cid=req.param("cartid");
+	uid=req.param("uid");
+	console.log("UID: "+uid+" CID: "+cid);
 	mongo.connect(mongoURL, function(){
 		console.log('Connected to mongo at: ' + mongoURL);
 		var coll = mongo.collection('product_catalog');
@@ -38,23 +43,23 @@ function menus(req,res){
 				res.render('error.ejs');
 			}
 		});
-	});  
+	});
 }
 
 function addToCart(req,res){
 
 	var product_id = req.query.product_id;
-	
+
 	menuFinal.forEach(function(item) {
-		if(item.product_id==product_id){	
+		if(item.product_id==product_id){
 			console.log(item.product_id+"item.product_id");
-			if(item.quantity===undefined||item.quantity==0){				
+			if(item.quantity===undefined||item.quantity==0){
 				item.quantity=1;
 				cartItems.push(item);
 			}else{
 				item.quantity=item.quantity+1;
 			}
-			
+			//category.check(item.product_id)
 			total=total+item.price;
 		}
 
@@ -67,13 +72,13 @@ function addToCart(req,res){
 function deleteFromCart(req,res){
 
 	var product_id = req.query.product_id;
-	
+
 	for(var i=0;i<cartItems.length;i++){
 		 if (cartItems[i].product_id == product_id) {
 			 total=total-cartItems[i].price*cartItems[i].quantity;
 			 cartItems[i].quantity=0;
 	          cartItems.splice(i, 1);
-	            
+
 	        }
 	}
 	console.log("CID: "+cid);
@@ -83,7 +88,7 @@ function deleteFromCart(req,res){
 
 
 function confirmOrder(req,res){
-
+  cart.cart(cartItems,uid,cid);
 	//render Pooja's Page
 	//res.render('menu.ejs', {menu1:menu1,menu2:menu2,menu3:menu3,menu4:menu4, cartItems:cartItems, total:total });
 
@@ -93,4 +98,3 @@ exports.menus=menus;
 exports.addToCart=addToCart;
 exports.deleteFromCart=deleteFromCart;
 exports.confirmOrder=confirmOrder;
-
