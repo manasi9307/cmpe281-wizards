@@ -20,6 +20,7 @@ res.render('error.ejs');
            //throw err;
          }//if
          else{
+<<<<<<< HEAD
            //res.render('home.ejs',{uid: uid});
            var cursor = coll.find();
            cursor.toArray(function(err,doc){
@@ -31,6 +32,23 @@ res.render('error.ejs');
 
          }//else
 
+=======
+           res.render('home.ejs',{uid: uid});
+                 console.log("Success");
+
+         }//else
+  var cursor = coll.find();
+  cursor.toArray(function(err,doc){
+    console.log(doc);
+    console.log("cart"+doc[0]._id)
+    res.render("home.ejs",{uid:doc._id,carts:doc});
+  });//each
+
+
+
+
+
+>>>>>>> 9a13ff5bbae90401cd3da6696e62275c7153a388
        console.log("HELLO");
   });//query
 

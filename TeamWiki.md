@@ -221,3 +221,30 @@ We are facing issues with respect to deployment of our code on AWS. Focus on res
 
 The challenge which we are facing for this week is the conflict on github merge and unclear about deployment model on AWS.
 
+# Team Meetings
+
+#### Date: 11-15-2017  
+
+Duration: 4 hours 
+
+Noted by: Varun Upadhyay
+
+Agenda:
+Discussed regarding 
+
+Outcome:
+* Issues regarding deployement
+* Merge conflicts faced during integration
+
+#### What did the team do the past week? 
+The team refractored small changes and continued with the integration.
+
+#### What is the team going to do next week?
+
+We will be giving the last touch to the code integration and finish the deployement
+
+#### What are the current blockers/challenges the team is facing?
+
+The challenge which we are facing for this week are a few integration discrepencies. We will work on resolving them before the final deployement.
+
+

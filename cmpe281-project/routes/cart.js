@@ -2,14 +2,22 @@ var ejs = require('ejs');
 var mongo = require('./mongo');
 //var mongoURL = 'mongodb://34.215.109.198:27017/trial';
 var mongoURL = 'mongodb://localhost:27017/project281';
+<<<<<<< HEAD
 function cart(cart_details,uid,cid) {
+=======
+function cart(req, res) {
+>>>>>>> 9a13ff5bbae90401cd3da6696e62275c7153a388
   console.log('cart entered');
   var product_col;
   var cart_col;
   var userOrder_col;
   var userDetails_col;
+<<<<<<< HEAD
   console.log("CHECK: "+uid);
   /*mongo.connect(mongoURL, function() {
+=======
+  mongo.connect(mongoURL, function() {
+>>>>>>> 9a13ff5bbae90401cd3da6696e62275c7153a388
     console.log('Connected to mongo at: ' + mongoURL);
     // to access cart_details collection
 
@@ -114,6 +122,10 @@ function cart(cart_details,uid,cid) {
         }
       }
     });
+<<<<<<< HEAD
   });*/
+=======
+  });
+>>>>>>> 9a13ff5bbae90401cd3da6696e62275c7153a388
 }
 exports.cart = cart;
