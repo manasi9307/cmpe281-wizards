@@ -247,4 +247,28 @@ We will be giving the last touch to the code integration and finish the deployem
 
 The challenge which we are facing for this week are a few integration discrepencies. We will work on resolving them before the final deployement.
 
+#### Date: 11-14-2017  
+
+Duration: 3 hours 
+
+Noted by: Pooja Shivasharanappa
+
+Agenda:
+Discussed regarding 
+
+Outcome:
+* Integrated 5 modules.
+* Working on partition tolerance 
+
+#### What did the team do the past week? 
+The team integrated the 5 modules.
+
+#### What is the team going to do next week?
+
+We are working on partition tolerance of mongo instance.
+
+#### What are the current blockers/challenges the team is facing?
+
+The challenge which we are facing for this week is how to use the voter to decide on which bringing up the mongo instance when one fails.
+
 
