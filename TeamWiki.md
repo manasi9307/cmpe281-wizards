@@ -269,6 +269,6 @@ We are working on partition tolerance of mongo instance.
 
 #### What are the current blockers/challenges the team is facing?
 
-The challenge which we are facing for this week is how to use the voter to decide on which bringing up the mongo instance when one fails.
+The challenge which we are facing for this week is how to use the voter to decide on bringing up the secondary mongo instance when primary fails.
 
 
