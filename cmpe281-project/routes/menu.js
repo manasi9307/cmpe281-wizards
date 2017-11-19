@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 
-=======
-var category = require("category.ejs");
->>>>>>> 9a13ff5bbae90401cd3da6696e62275c7153a388
 var ejs = require("ejs");
 var mongo = require("./mongo");
 var mongoURL = "mongodb://localhost:27017/project281";
@@ -63,11 +59,7 @@ function addToCart(req,res){
 			}else{
 				item.quantity=item.quantity+1;
 			}
-<<<<<<< HEAD
 			//category.check(item.product_id)
-=======
-			category.check(item.product_id)
->>>>>>> 9a13ff5bbae90401cd3da6696e62275c7153a388
 			total=total+item.price;
 		}
 
