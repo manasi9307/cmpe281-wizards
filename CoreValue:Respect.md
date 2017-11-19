@@ -48,3 +48,6 @@ Week 7
 
 Team integrated the code we have worked on and faced some deployment issues. Contacted the professor regarding the same as we are not clear on the deliverable.
 
+Week 8
+
+Working on partition tolerance to handle if a mongo instance fails. Integration of individual modules is successfully completed.
