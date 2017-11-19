@@ -9,7 +9,7 @@ function cart(cart_details,uid,cid) {
   var userOrder_col;
   var userDetails_col;
   console.log("CHECK: "+uid);
-  /*mongo.connect(mongoURL, function() {
+  mongo.connect(mongoURL, function() {
     console.log('Connected to mongo at: ' + mongoURL);
     // to access cart_details collection
 
@@ -22,36 +22,15 @@ function cart(cart_details,uid,cid) {
     // to access user collection
     userDetails_col = mongo.collection('user_details');
 
-    //cart_details json with user_id,cart_id and the items list sent
-    var cart_details = {
-      user_id: 1,
-      cart_id: 1,
-      items: [
-        {
-          name: 'Paneer Masala',
-          cost: 2,
-          quantity: 3
-        },
-        {
-          name: 'Burrito',
-          cost: 3,
-          quantity: 1
-        },
-        {
-          name: 'Pasta',
-          cost: 2,
-          quantity: 1
-        }
-      ]
-    };
+ 
 
     var total = 0; // total to find the total cost of all the items in the cart
     var product;
     // calculate total cost for the cart_items list
     // for loop to iterate through each item ordered in cart_details json
-    for (i = 0; i < cart_details.items.length; i++) {
+    for (i = 0; i < cart_details.length; i++) {
       // query database for the cart_item
-      product_col.find({ product_name: cart_details.items[i].name }, function(
+      product_col.find({ product_name: cart_details[i].product_name }, function(
         err,
         products
       ) {
@@ -61,7 +40,7 @@ function cart(cart_details,uid,cid) {
 
           console.log('successful querying of product');
           //calculate the cost using price fetched from the query and find the total cost using quantity and cost
-          total = cart_details.items[i].quantity * products.price;
+          total = cart_details[i].quantity * products.price;
         } else {
           //console the error
           console.log('failed operation');
@@ -71,9 +50,9 @@ function cart(cart_details,uid,cid) {
     // insert the details into the cart_details collection
     cart_col.insert(
       {
-        cart_id: cart_details.cart_id,
-        user_id: cart_details.user_id,
-        status: cart_details.status,
+        cart_id: cid,
+        user_id: uid,
+        status: "open",
         total: total
       },
       function(err, user) {
@@ -88,8 +67,8 @@ function cart(cart_details,uid,cid) {
     //insert the details into user_order collection
     userOrder_col.insert(
       {
-        multiuser_id: cart_details.user_id,
-        cart_id: cart_details.cart_id,
+        multiuser_id: uid,
+        cart_id: cid,
         product_id: product
       },
       function(err, results) {
@@ -102,7 +81,7 @@ function cart(cart_details,uid,cid) {
     );
 
     //check if the user is prime user and then redirect him to payment page or just display the contents of the particular user
-    userDetails_col.findOne({ user_id: cart_details.user_id }, function(
+    userDetails_col.findOne({ user_id: uid }, function(
       err,
       user
     ) {
@@ -114,6 +93,6 @@ function cart(cart_details,uid,cid) {
         }
       }
     });
-  });*/
+  });
 }
 exports.cart = cart;
