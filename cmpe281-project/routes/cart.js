@@ -28,7 +28,9 @@ function cart(cart_details,uid,cid) {
     var product;
     // calculate total cost for the cart_items list
     // for loop to iterate through each item ordered in cart_details json
-    for (i = 0; i < cart_details.length; i++) {
+    
+    
+   /* for (i = 0; i < cart_details.length; i++) {
       // query database for the cart_item
       product_col.find({ product_name: cart_details[i].product_name }, function(
         err,
@@ -46,7 +48,12 @@ function cart(cart_details,uid,cid) {
           console.log('failed operation');
         }
       });
+    }*/
+    
+    for(i=0;i<cart_details.length;i++){
+      total= cart_details[i].price * cart_details[i].quantity;
     }
+
     // insert the details into the cart_details collection
     cart_col.insert(
       {
@@ -69,7 +76,7 @@ function cart(cart_details,uid,cid) {
       {
         multiuser_id: uid,
         cart_id: cid,
-        product_id: product
+        product_id: cart_details.product_id
       },
       function(err, results) {
         if (result) {
