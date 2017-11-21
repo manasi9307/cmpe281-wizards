@@ -3,7 +3,8 @@ var mongo = require('./mongo');
 var ObjectId = require('mongodb').ObjectID;
 //var mongoURL = 'mongodb://34.215.109.198:27017/trial';
 var mongoURL = 'mongodb://localhost:27017/project281';
-function cart(cart_details,uid,cid) {
+function cart(cart_details,uid,cartid) {
+  var cid=Number(cartid);
   console.log('cart entered');
   var product_col;
   var prod=[], userType='';
@@ -29,7 +30,7 @@ function cart(cart_details,uid,cid) {
     // for loop to iterate through each item ordered in cart_details json
 
     for(i=0;i<cart_details.length;i++){
-      total= cart_details[i].price * cart_details[i].quantity;
+      total+= cart_details[i].price * cart_details[i].quantity;
     }
 
     // insert the details into the cart_details collection

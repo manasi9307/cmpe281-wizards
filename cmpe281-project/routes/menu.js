@@ -96,8 +96,9 @@ function confirmOrder(req,res){
 		if (user) {
 			ty=user.flag;
 			console.log("FLAG CHECK: "+ty);
-			if(ty==0)
-			res.render('payment.ejs',{uid:uid,cid:cid,total: 500});
+			if(ty==0){
+			res.render('payment.ejs',{uid:uid,cid:cid,total: total});
+		}
 			else
 			res.render('cart.ejs');
 		}
