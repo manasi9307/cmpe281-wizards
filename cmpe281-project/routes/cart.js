@@ -88,13 +88,13 @@ function cart(cart_details,uid,cid) {
     );
 
     //check if the user is prime user and then redirect him to payment page or just display the contents of the particular user
-    userDetails_col.findOne({ user_id: uid }, function(
+    userDetails_col.findOne({ '_id': uid }, function(
       err,
       user
-    ) {
+    ){
       if (user) {
         if (user.flag == 0) {
-          res.render('cart.ejs', { cart_details: cart_details });
+          res.render('cart.ejs', {uid:uid,cid:cid,cart_details: cart_details });
         } else {
           res.render('payment.ejs', { total: total });
         }
