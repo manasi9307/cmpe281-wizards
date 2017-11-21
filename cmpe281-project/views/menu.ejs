@@ -18,7 +18,7 @@
 <th font-size="24px">Indian</th>
 </tr>
 <% for(var i=0; i<menu1.length; i++) {%>
-<form method="post" action="/addToCart/?product_id=<%=  menu1[i].product_id %>">
+<form method="post" action="/addToCart/?product_id=<%=  menu1[i].product_id %>&category_id=<%=  menu1[i].category_id %>">
 <tr>
 <td><span><%= menu1[i].product_name %></span></td>
   <td padding="20px"><span><%= menu1[i].price %></span></td>
@@ -39,7 +39,7 @@
 <th>Italian</th>
 </tr>
 <% for(var i=0; i<menu2.length; i++) {%>
-<form method="post"  action="/addToCart/?product_id=<%=  menu2[i].product_id %>">
+<form method="post"  action="/addToCart/?product_id=<%=  menu2[i].product_id %>&category_id=<%=  menu2[i].category_id %>">
 <tr>
 <td><span><%= menu2[i].product_name %></span></td>
 <td><span><%= menu2[i].price %></span></td>
@@ -59,7 +59,7 @@
 <th>Chinese</th>
 </tr>
 <% for(var i=0; i<menu3.length; i++) {%>
-<form method="post"  action="/addToCart/?product_id=<%=  menu3[i].product_id %>">
+<form method="post"  action="/addToCart/?product_id=<%=  menu3[i].product_id %>&category_id=<%=  menu3[i].category_id %>">
 <tr>
 <td><span><%= menu3[i].product_name %></span></td>
 <td><span><%= menu3[i].price %></span></td>
@@ -79,7 +79,7 @@
 <th>Mexican</th>
 </tr>
 <% for(var i=0; i<menu4.length; i++) {%>
-<form method="post"  action="/addToCart/?product_id=<%=  menu4[i].product_id %>">
+<form method="post"  action="/addToCart/?product_id=<%=  menu4[i].product_id %>&category_id=<%=  menu4[i].category_id %>">
 <tr>
 <td><span><%= menu4[i].product_name %></span></td>
 <td><span><%= menu4[i].price %></span></td>
@@ -143,9 +143,17 @@
 </td>
 </tr>
 </table>
+<table>
+<br/><br/><br/><br/>
 
 
-
+<tr><td>Suggestions for you:</td></tr>
+<% for(var i=0; i<suggestedItems.length; i++) {%>
+<tr>
+<td><span><%= suggestedItems[i].product_name %></span></td>
+</tr>
+<% } %>
+</table>
 
 </body>
 </html>

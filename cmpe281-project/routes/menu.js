@@ -5,7 +5,8 @@ var mongoURL = "mongodb://localhost:27017/project281";
 var ObjectId = require('mongodb').ObjectID;
 var cartItems=[];
 var cart = require("./cart");
-var menu1=[], menu2=[], menu3=[], menu4=[], menuFinal=[], total=0.00,cid=0,uid=0;
+var menu1=[], menu2=[], menu3=[], menu4=[], menuFinal=[], total=0.00,cid=0,uid=0, suggestedItems=[];
+
 
 
 function menus(req,res){
@@ -39,7 +40,7 @@ function menus(req,res){
 
 				});
 				console.log("CID: "+cid);
-				res.render('menu.ejs', {menu1:menu1,menu2:menu2,menu3:menu3,menu4:menu4, cartItems:cartItems,total:total });
+				res.render('menu.ejs', {menu1:menu1,menu2:menu2,menu3:menu3,menu4:menu4, cartItems:cartItems,total:total, suggestedItems:suggestedItems });
 			} else {
 				res.render('error.ejs');
 			}
@@ -50,23 +51,41 @@ function menus(req,res){
 function addToCart(req,res){
 
 	var product_id = req.query.product_id;
-
+	var category_id = req.query.category_id;
+	
+	suggestedItems=[];
+   
 	menuFinal.forEach(function(item) {
 		if(item.product_id==product_id){
-			console.log(item.product_id+"item.product_id");
+			
 			if(item.quantity===undefined||item.quantity==0){
 				item.quantity=1;
 				cartItems.push(item);
 			}else{
 				item.quantity=item.quantity+1;
 			}
-			//category.check(item.product_id)
-			total=total+item.price;
+			
+			total=total+item.price;			
 		}
+		
+		if(item.category_id==category_id){
+		var foundIncart=false;
+			for(var i=0;i<cartItems.length;i++){
+				
+				if(cartItems[i].product_id==item.product_id){					
+					foundIncart=true;					
+				}
+				
+			}
+			if(!foundIncart)
+			{suggestedItems.push(item);}			
+			} 
 
 	});
+	
+	
 	console.log("CID: "+cid);
-	res.render('menu.ejs', {menu1:menu1,menu2:menu2,menu3:menu3,menu4:menu4, cartItems:cartItems, total:total });
+	res.render('menu.ejs', {menu1:menu1,menu2:menu2,menu3:menu3,menu4:menu4, cartItems:cartItems, total:total, suggestedItems:suggestedItems });
 
 }
 
@@ -83,7 +102,7 @@ function deleteFromCart(req,res){
 	        }
 	}
 	console.log("CID: "+cid);
-	res.render('menu.ejs', {menu1:menu1,menu2:menu2,menu3:menu3,menu4:menu4, cartItems:cartItems, total:total });
+	res.render('menu.ejs', {menu1:menu1,menu2:menu2,menu3:menu3,menu4:menu4, cartItems:cartItems, total:total, suggestedItems:suggestedItems });
 
 }
 
