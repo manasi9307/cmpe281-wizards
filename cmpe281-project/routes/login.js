@@ -17,7 +17,6 @@ console.log("USERNAME: "+username);
               var col2 = mongo.collection('cart_details');
               var x=(user._id).toString();
               col2.find({user_id: x}).toArray(function(err,cart){
-           	console.log("CART: "+cart[0]._id);
            	res.render('home.ejs',{ uid: user._id,carts:cart});
           })
         }

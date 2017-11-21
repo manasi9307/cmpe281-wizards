@@ -2,6 +2,7 @@
 var ejs = require("ejs");
 var mongo = require("./mongo");
 var mongoURL = "mongodb://localhost:27017/project281";
+var ObjectId = require('mongodb').ObjectID;
 var cartItems=[];
 var cart = require("./cart");
 var menu1=[], menu2=[], menu3=[], menu4=[], menuFinal=[], total=0.00,cid=0,uid=0;
@@ -89,6 +90,26 @@ function deleteFromCart(req,res){
 
 function confirmOrder(req,res){
   cart.cart(cartItems,uid,cid);
+  var usercol = mongo.collection('user_details');
+	var ty='';
+	usercol.findOne({ _id: ObjectId(uid) }, function(err,user){
+		if (user) {
+			ty=user.flag;
+			console.log("FLAG CHECK: "+ty);
+			if(ty==0)
+			res.render('payment.ejs',{uid:uid,cid:cid,total: 500});
+			else
+			res.render('cart.ejs');
+		}
+	});
+
+	//console.log("AFTER INSERT RES:-------"+r);
+	/*if(r==0){
+res.render('cart.ejs');
+}
+	else {
+		res.render();
+	}*/
 	//render Pooja's Page
 	//res.render('menu.ejs', {menu1:menu1,menu2:menu2,menu3:menu3,menu4:menu4, cartItems:cartItems, total:total });
 

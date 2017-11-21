@@ -5,7 +5,7 @@ var express = require('express')
     , success = require('./routes/successpay')
   ,  menu=require('./routes/menu')
   ,  login=require('./routes/login')
-      ,  getcartid=require('./routes/getcartid')  
+      ,  getcartid=require('./routes/getcartid')
   ,  cartid=require('./routes/createcartid')
   ,  cart=require('./routes/cart')
   , http = require('http')
@@ -55,11 +55,9 @@ app.use('/menu', menu.menus);
 app.use('/addToCart', menu.addToCart);
 app.use('/deleteFromCart', menu.deleteFromCart);
 app.use('/confirmOrder', menu.confirmOrder);
-/*
-app.post('/payment', payment.payment);
 
-app.get('/menu', menu.menus);
-app.post('/successpay', success.success);*/
+app.use('/payment', payment.payment);
+app.post('/successpay', success.success);
 app.post('/cart', cart.cart);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
