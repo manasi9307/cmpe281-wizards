@@ -52,39 +52,39 @@ function addToCart(req,res){
 
 	var product_id = req.query.product_id;
 	var category_id = req.query.category_id;
-	
+
 	suggestedItems=[];
-   
+
 	menuFinal.forEach(function(item) {
 		if(item.product_id==product_id){
-			
+
 			if(item.quantity===undefined||item.quantity==0){
 				item.quantity=1;
 				cartItems.push(item);
 			}else{
 				item.quantity=item.quantity+1;
 			}
-			
-			total=total+item.price;			
+
+			total=total+item.price;
 		}
-		
+
 		if(item.category_id==category_id){
 		var foundIncart=false;
 			for(var i=0;i<cartItems.length;i++){
-				
-				if(cartItems[i].product_id==item.product_id){					
-					foundIncart=true;					
+
+				if(cartItems[i].product_id==item.product_id){
+					foundIncart=true;
 				}
-				
+
 			}
 			if(!foundIncart)
-			{suggestedItems.push(item);}			
-			} 
+			{suggestedItems.push(item);}
+			}
 
 	});
-	
-	
-	console.log("CID: "+cid);
+
+
+	console.log("SUGGESTIONS: "+suggestedItems);
 	res.render('menu.ejs', {menu1:menu1,menu2:menu2,menu3:menu3,menu4:menu4, cartItems:cartItems, total:total, suggestedItems:suggestedItems });
 
 }
@@ -110,13 +110,17 @@ function deleteFromCart(req,res){
 function confirmOrder(req,res){
   cart.cart(cartItems,uid,cid);
   var usercol = mongo.collection('user_details');
+	var cartcol = mongo.collection('cart_details');
 	var ty='';
 	usercol.findOne({ _id: ObjectId(uid) }, function(err,user){
 		if (user) {
 			ty=user.flag;
 			console.log("FLAG CHECK: "+ty);
 			if(ty==0){
-			res.render('payment.ejs',{uid:uid,cid:cid,total: total});
+				console.log("TOTAL:-------"+cid);
+				cartcol.findOne({cart_id:Number(cid)},function(er,t){
+		res.render('payment.ejs',{uid:uid,cid:cid,total: t.total});
+		    });
 		}
 			else
 			res.render('cart.ejs');

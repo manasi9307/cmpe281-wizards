@@ -11,7 +11,7 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
   var bodyParser=require('body-parser');
-
+var expressSessions = require("express-session");
 var app = express();
 
 // all environments
@@ -25,6 +25,13 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(expressSessions({
+    secret: "project",
+    resave: false,
+    saveUninitialized: false,
+    duration: 30 * 60 * 1000,
+    activeDuration: 5 * 6 * 1000
+}));
 
 // development only
 if ('development' == app.get('env')) {
@@ -49,6 +56,7 @@ app.post('/', function(req, res) {
     })(req, res);
 });
 app.post('/login', login.login);
+app.get('/logout', login.logout);
 app.post('/createcartid', cartid.createcartid);
 app.post('/getcartid', getcartid.usecart);
 app.use('/menu', menu.menus);

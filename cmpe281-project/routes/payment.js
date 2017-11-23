@@ -23,10 +23,27 @@ function check(req,res){
 
 
 function getUser(uid,cid,type){
-user=uid;
-cart=cid;
-type=type;
-check();
+	var col1= mongo.collection('user_order');
+		var x=Number(cid);
+var final_list=[];
+		col1.find({cart_id: 2003}).toArray(function(err,items){
+			console.log("ITEM CHECK--------------"+items);
+			var l1=(items.length);
+			console.log("ITEMS LENGTH: "+l1);
+			for(var i=0;i<l1;i++){
+				var l=(items[i].product_id).length;
+				console.log("CHECK THIS####### : "+l);
+				for(var j=0;j<l;j++){
+				console.log("ALL IDS CHECK************************ "+items[i].product_id[j]);
+				var coll2=mongo.collection('product_catalog');
+				col1.find({cart_id: items[i].product_id[j]},function(err,item){
+					final_list.push(item.product_name);
+				});
+
+			}
+			}
+
+	})
 }
 
 exports.payment=check;

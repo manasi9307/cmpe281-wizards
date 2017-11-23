@@ -34,15 +34,20 @@ function cart(cart_details,uid,cartid) {
     }
 
     // insert the details into the cart_details collection
-    cart_col.update(
-      {cart_id:cid,user_id:uid},{$set:{total:total}},
-      function(err, user) {
-        if (user) {
-          console.log('successful insertion');
-        } else {
-          console.log('ERROR');
-        }
-      });
+    cart_col.findOne({cart_id:cid},function(er,t){
+      var temp=t.total;
+      cart_col.update(
+        {cart_id:cid,user_id:uid},{$set:{total:total+temp}},
+        function(err, user) {
+          if (user) {
+            console.log('successful insertion');
+          } else {
+            console.log('ERROR');
+          }
+        });
+
+    });
+
 
 
     //insert the details into user_order collection
@@ -56,7 +61,8 @@ function cart(cart_details,uid,cartid) {
       {
         multiuser_id: uid,
         cart_id: cid,
-        product_id: prod
+        product_id: prod,
+        total:total
       },
       function(err, results) {
         if (results) {

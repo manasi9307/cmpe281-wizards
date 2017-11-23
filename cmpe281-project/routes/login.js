@@ -14,6 +14,7 @@ console.log("USERNAME: "+username);
         col1.findOne({email: username,password:password}, function(err, user){
           console.log("USER:  "+user._id);
             if (user) {
+
               var col2 = mongo.collection('cart_details');
               var x=(user._id).toString();
               col2.find({user_id: x}).toArray(function(err,cart){
@@ -30,5 +31,11 @@ console.log("USERNAME: "+username);
 
 }//function
 
+function logout(req,res){
+  console.log('Session Destroyed');
+  res.render('index.ejs');
+}//function
+
 
 exports.login=check;
+exports.logout=logout;
