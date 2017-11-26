@@ -2,7 +2,7 @@ var ejs = require('ejs');
 var mongo = require('./mongo');
 var ObjectId = require('mongodb').ObjectID;
 //var mongoURL = 'mongodb://34.215.109.198:27017/trial';
-var mongoURL = 'mongodb://localhost:27017/project281';
+var mongoURL = 'mongodb://34.215.212.195:27017/project281';
 function cart(cart_details,uid,cartid) {
   var cid=Number(cartid);
   console.log('cart entered');
@@ -35,9 +35,11 @@ function cart(cart_details,uid,cartid) {
 
     // insert the details into the cart_details collection
     cart_col.findOne({cart_id:cid},function(er,t){
-      var temp=t.total;
+      var temp=Number(t.total);
+      temp+=total
+      console.log("CHECK TOTAL: "+temp);
       cart_col.update(
-        {cart_id:cid,user_id:uid},{$set:{total:total+temp}},
+        {cart_id:cid},{$set:{total:temp}},
         function(err, user) {
           if (user) {
             console.log('successful insertion');

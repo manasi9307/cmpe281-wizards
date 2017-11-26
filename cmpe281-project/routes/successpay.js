@@ -1,6 +1,6 @@
 var ejs = require("ejs");
 var mongo = require("./mongo");
-var mongoURL = "mongodb://localhost:27017/project281";
+var mongoURL = "mongodb://34.215.212.195:27017/project281";
 var ObjectId = require('mongodb').ObjectID;
 function updatestatus(req,res){
 	var mode=req.param("mode");
@@ -16,8 +16,6 @@ console.log(mode+cnumber);
             if (err) throw err;
             else{
                 var col2 = mongo.collection('cart_details');
-                //var myquery = {"cart_id": cid };
-                //var newvalues = {"status": "closed"};
                console.log("QUERY CHECK: "+cid);
                 col2.updateOne({"cart_id":cid}, {"$set":{"status": "closed"}}, function(err, results){
 									console.log("CHECK UPDATE:---> "+results);

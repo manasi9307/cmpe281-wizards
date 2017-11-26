@@ -1,6 +1,6 @@
 var ejs = require("ejs");
 var mongo = require("./mongo");
-var mongoURL = "mongodb://localhost:27017/project281";
+var mongoURL = "mongodb://35.166.169.211:27017/project281";
 
 function generate(req,res){
 var temp=Math.random();
@@ -20,9 +20,8 @@ res.render('error.ejs');
            //throw err;
          }//if
          else{
-           //res.render('home.ejs',{uid: uid});
-           var cursor = coll.find();
-           cursor.toArray(function(err,doc){
+        var x=(uid).toString();
+           coll.find({user_id: x}).toArray(function(err,doc){
              console.log("UID"+ uid);
              console.log("cart"+doc[0]._id)
              res.render("home.ejs",{uid:uid ,carts:doc});

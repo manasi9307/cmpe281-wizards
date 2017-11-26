@@ -1,7 +1,7 @@
 
 var ejs = require("ejs");
 var mongo = require("./mongo");
-var mongoURL = "mongodb://localhost:27017/project281";
+var mongoURL = "mongodb://35.166.169.211:27017/project281";
 var ObjectId = require('mongodb').ObjectID;
 var cartItems=[];
 var cart = require("./cart");
@@ -117,8 +117,9 @@ function confirmOrder(req,res){
 			ty=user.flag;
 			console.log("FLAG CHECK: "+ty);
 			if(ty==0){
-				console.log("TOTAL:-------"+cid);
+
 				cartcol.findOne({cart_id:Number(cid)},function(er,t){
+					console.log("TOTAL:-------"+t.total);
 		res.render('payment.ejs',{uid:uid,cid:cid,total: t.total});
 		    });
 		}
@@ -126,17 +127,6 @@ function confirmOrder(req,res){
 			res.render('cart.ejs');
 		}
 	});
-
-	//console.log("AFTER INSERT RES:-------"+r);
-	/*if(r==0){
-res.render('cart.ejs');
-}
-	else {
-		res.render();
-	}*/
-	//render Pooja's Page
-	//res.render('menu.ejs', {menu1:menu1,menu2:menu2,menu3:menu3,menu4:menu4, cartItems:cartItems, total:total });
-
 }
 
 exports.menus=menus;

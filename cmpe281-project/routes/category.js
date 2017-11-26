@@ -1,6 +1,6 @@
 var ejs = require("ejs");
 var mongo = require("./mongo");
-var mongoURL = "mongodb://localhost:27017/project281";
+var mongoURL = "mongodb://34.215.212.195:27017/project281";
 
 
 function check(req,res,int order_item_id){
@@ -9,7 +9,7 @@ console.log(id);
         console.log('Connected to mongo at: ' + mongoURL);
         var coll = mongo.collection('product_catalogue');
         var categ_id = -1;
-        
+
         // Finding the category id associated to the product id
         coll.find({product_id : order_item_id}, function(err, cat){
             if(cat){
@@ -19,7 +19,7 @@ console.log(id);
             	res.render('error.ejs');
             }
         }
-        
+
         // Keeping a check to prevent the same item from getting recommended
         coll.find({category_id : categ_id}, function(err, cat){
             if (cat) {
@@ -35,6 +35,5 @@ console.log(id);
             	res.render('error.ejs');
             }
         });
-    });  
+    });
 }
-
