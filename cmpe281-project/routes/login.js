@@ -1,6 +1,6 @@
 var ejs = require("ejs");
 var mongo = require("./mongo");
-var mongoURL = "mongodb://35.166.169.211:27017/project281";
+var mongoURL = "mongodb://52.8.19.39:27017,13.56.167.225:27017,13.56.67.12:27017/project281?replicaSet=rs0";
 function check(req,res){
   var username,password;
 username=req.param("username");
