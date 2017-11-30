@@ -1,6 +1,6 @@
 var ejs = require("ejs");
 var mongo = require("./mongo");
-var mongoURL = "mongodb://34.215.212.195:27017/project281";
+var mongoPayment = "mongodb://34.215.212.195:27017,35.166.169.211:27017,52.38.136.191:27017/project281?replicaSet=rs0";
 var ObjectId = require('mongodb').ObjectID;
 function updatestatus(req,res){
 	var mode=req.param("mode");
@@ -9,8 +9,8 @@ function updatestatus(req,res){
 	var cid=Number(req.param("cid"));
 	var newbill={user_id: uid,mode:mode,card_num:cnumber,cart_id:cid};
 console.log(mode+cnumber);
-    mongo.connect(mongoURL, function(){
-        console.log('Connected to mongo at: ' + mongoURL);
+    mongo.connect(mongoPayment, function(){
+        console.log('Connected to mongo at: ' + mongoPayment);
         var col1 = mongo.collection('payment');
         col1.insertOne(newbill, function(err, rest) {
             if (err) throw err;

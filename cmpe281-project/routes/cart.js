@@ -1,8 +1,11 @@
 var ejs = require('ejs');
 var mongo = require('./mongo');
 var ObjectId = require('mongodb').ObjectID;
-//var mongoURL = 'mongodb://34.215.109.198:27017/trial';
-var mongoURL = 'mongodb://34.215.212.195:27017/project281';
+//var mongoProduct = 'mongodb://34.215.109.198:27017/trial';
+var mongoProduct = 'mongodb://13.57.119.118:27017,52.52.150.229:27017,52.8.128.10:27017/project281?replicaSet=rs0';
+var mongoCart='mongodb://34.215.212.195:27017/project281';
+var mongoOrder = 'mongodb://34.215.212.195:27017/project281';
+
 function cart(cart_details,uid,cartid) {
   var cid=Number(cartid);
   console.log('cart entered');
@@ -11,8 +14,8 @@ function cart(cart_details,uid,cartid) {
   var cart_col;
   var userDetails_col;
   console.log("CHECK QUANTITY: "+cart_details[0].quantity);
-  mongo.connect(mongoURL, function() {
-    console.log('Connected to mongo at: ' + mongoURL);
+  mongo.connect(mongoProduct, function() {
+    console.log('Connected to mongo at: ' + mongoProduct);
     // to access cart_details collection
     cart_col = mongo.collection('cart_details');
 

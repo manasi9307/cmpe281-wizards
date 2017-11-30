@@ -1,7 +1,11 @@
 
 var ejs = require("ejs");
 var mongo = require("./mongo");
-var mongoURL = "mongodb://13.57.119.118:27017,52.52.150.229:27017,52.8.128.10:27017/project281?replicaSet=rs0";
+//var mongoProduct = "mongodb://13.57.119.118:27017,52.52.150.229:27017,52.8.128.10:27017/project281?replicaSet=rs0";
+var mongoProduct = 'mongodb://13.57.119.118:27017,52.52.150.229:27017,52.8.128.10:27017/project281?replicaSet=rs0';
+var mongoCart='mongodb://34.215.212.195:27017/project281';
+var mongoOrder = 'mongodb://34.215.212.195:27017/project281';
+
 var ObjectId = require('mongodb').ObjectID;
 var cartItems=[];
 var cart = require("./cart");
@@ -14,8 +18,8 @@ function menus(req,res){
 	cid=req.param("cartid");
 	uid=req.param("uid");
 	console.log("UID: "+uid+" CID: "+cid);
-	mongo.connect(mongoURL, function(){
-		console.log('Connected to mongo at: ' + mongoURL);
+	mongo.connect(mongoProduct, function(){
+		console.log('Connected to mongo at: ' + mongoProduct);
 		var coll = mongo.collection('product_catalog');
 		menu1=[], menu2=[], menu3=[], menu4=[], menuFinal=[], cartItems=[], total=0.00
 		coll.find().toArray(function(err, menu){

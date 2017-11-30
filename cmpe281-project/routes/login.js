@@ -1,13 +1,13 @@
 var ejs = require("ejs");
 var mongo = require("./mongo");
-var mongoURL = "mongodb://52.8.19.39:27017,13.56.167.225:27017,13.56.67.12:27017/project281?replicaSet=rs0";
+var mongoUser_Cart = "mongodb://52.8.19.39:27017,13.56.167.225:27017,13.56.67.12:27017/project281?replicaSet=rs0";
 function check(req,res){
   var username,password;
 username=req.param("username");
 password=req.param("password");
 console.log("USERNAME: "+username);
-    mongo.connect(mongoURL, function(){
-        console.log('Connected to mongo at: ' + mongoURL);
+    mongo.connect(mongoUser_Cart, function(){
+        console.log('Connected to mongo at: ' + mongoUser_Cart);
         var col1 = mongo.collection('user_details');
 
         col1.findOne({email: username,password:password}, function(err, user){
