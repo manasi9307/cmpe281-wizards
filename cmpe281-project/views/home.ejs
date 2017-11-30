@@ -8,7 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
-  <body background="http://foodanddrinkhub.co.uk/files/8414/3351/9983/PeppersBanner.jpg">
+  <body>
     <nav class="navbar navbar-inverse">
    <div class="container-fluid">
         <div class="navbar-header">
@@ -21,16 +21,33 @@
 
 </nav>
   <h1>WELCOME</h1>
-  <h1>UID: <%= uid%><h1>
-
+<div class="row">
+  <div class="col-sm-2 col-md-2 col-lg-2"></div>
+<div class="col-sm-3 col-md-3 col-lg-3">
   <form  method="post" action="/createcartid">
   <input type="text" id="uid" name="uid" autocomplete="off" style="visibility:hidden" value=<%= uid%> ></input></br>
-Generate new cart id: <input type="submit"  class="btn btn-info" value="Generate">
+<label>Generate new cart id:</label>
+<input type="submit"  class="btn btn-info" value="Generate">
  </form>
- <br>
-<div class="container">
+</div>
 
-<table class="table table-bordered table-responsive table-hover">
+<div class="col-sm-4 col-md-4 col-lg-4">
+ <form method="post" action="/menu">
+     <input type="text" id="uid" name="uid" autocomplete="off" style="visibility:hidden" value=<%= uid%> ></input></br>
+<label> Use a cart:<label>
+   <input type="text"  id="cartid" name="cartid" autocomplete="off">
+ <input type="submit" class="btn btn-info" onclick="" value="Start" >
+ </form>
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-12 col-md-12 col-lg-12"></div>
+<div class="col-sm-12 col-md-12 col-lg-12"></div>
+<br><br><br>
+<div class="col-sm-2 col-md-2 col-lg-2"></div>
+<div class="col-sm-6 col-md-6 col-lg-6">
+<table class="table table-bordered table-responsive table-hover table-sm">
 <thead>
 <tr>
 <th>cart-ID</th>
@@ -47,12 +64,10 @@ Generate new cart id: <input type="submit"  class="btn btn-info" value="Generate
 <%}%>
 </table>
 </div>
+</div>
 
-<form method="post" action="/menu">
-    <input type="text" id="uid" name="uid" autocomplete="off" style="visibility:hidden" value=<%= uid%> ></input></br>
-Use a cart: <input type="text"  id="cartid" name="cartid" autocomplete="off">
-<input type="submit" class="btn btn-info" onclick="" value="Start" >
-</form>
+<div class="col-sm-4 col-md-4 col-lg-4"></div>
+
 
   </body>
 </html>
