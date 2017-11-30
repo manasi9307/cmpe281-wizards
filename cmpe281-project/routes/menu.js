@@ -1,7 +1,7 @@
 
 var ejs = require("ejs");
 var mongo = require("./mongo");
-var mongoURL = "mongodb://35.166.169.211:27017/project281";
+var mongoURL = "mongodb://13.57.119.118:27017,52.52.150.229:27017,52.8.128.10:27017/project281?replicaSet=rs0";
 var ObjectId = require('mongodb').ObjectID;
 var cartItems=[];
 var cart = require("./cart");
