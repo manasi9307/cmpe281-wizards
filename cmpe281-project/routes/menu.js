@@ -2,7 +2,7 @@
 var ejs = require("ejs");
 var mongo = require("./mongo");
 //var mongoProduct = "mongodb://13.57.119.118:27017,52.52.150.229:27017,52.8.128.10:27017/project281?replicaSet=rs0";
-var mongoProduct = 'mongodb://13.57.119.118:27017,52.52.150.229:27017,52.8.128.10:27017/project281?replicaSet=rs0';
+var mongoProduct = "mongodb://34.215.212.195:27017,35.166.169.211:27017,52.38.136.191:27017/project281?replicaSet=rs0";
 var mongoCart='mongodb://34.215.212.195:27017/project281';
 var mongoOrder = 'mongodb://34.215.212.195:27017/project281';
 
