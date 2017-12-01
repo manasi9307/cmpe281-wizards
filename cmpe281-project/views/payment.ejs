@@ -7,12 +7,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
-  <body background="http://foodanddrinkhub.co.uk/files/8414/3351/9983/PeppersBanner.jpg">
+  <body background="../images/food5.png">
     <nav class="navbar navbar-inverse">
  <div class="container-fluid">
       <!-----logo---->
-      <div class="navbar-header">
-        <a href="/home" class="navbar-brand">FOODAPP </a>
+      
         <div class="navbar-header">
           <a href="/" onclick="return false;" class="navbar-brand">FOODAPP </a>
           <ul class="nav navbar-nav">
@@ -23,12 +22,12 @@
  </div>
 
 </nav>
-<div class="container">
+<div class="container well well-lg">
   <h1>Payment</h1>
   Total amount: <%= total%>
   <h3>Enter card details</h3>
 
-  <form method="post" action="successpay" class="form-container">
+  <form method="post" action="successpay">
 <div class="form-group row">
   <div class="col-sm-10">
     Card type: <br/>
@@ -52,7 +51,7 @@
 </div>
 <div class="form-group row">
    <br/>
-  <div class="col-sm-10">
+  <div class="col col-md-3">
   <input class="form-control" type="text" id="cardno" name="cardno" autocomplete="off" placeholder="Card Number (xxxx-xxxx-xxxx-xxxx)"><br/>
 </div>
 </div>
