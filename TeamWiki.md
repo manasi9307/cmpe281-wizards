@@ -195,4 +195,80 @@ Integration of the different modules and how they would interact with each other
 
 The challenge which we are facing for this week is integration of various modules and their interaction with each other
 
+# Team Meetings
+
+#### Date: 11-08-2017  
+
+Duration: 3 hours 
+
+Noted by: Pooja Shivasharanappa
+
+Agenda:
+Discussed regarding 
+
+Outcome:
+* Faced some issues during integration as there was a discrepancy between the data models.
+* Conflicts due to github merge.
+
+#### What did the team do the past week? 
+The team completed the code implementation of the respective modules and began integration.
+
+#### What is the team going to do next week?
+
+We are facing issues with respect to deployment of our code on AWS. Focus on resolving that.
+
+#### What are the current blockers/challenges the team is facing?
+
+The challenge which we are facing for this week is the conflict on github merge and unclear about deployment model on AWS.
+
+# Team Meetings
+
+#### Date: 11-15-2017  
+
+Duration: 4 hours 
+
+Noted by: Varun Upadhyay
+
+Agenda:
+Discussed regarding 
+
+Outcome:
+* Issues regarding deployement
+* Merge conflicts faced during integration
+
+#### What did the team do the past week? 
+The team refractored small changes and continued with the integration.
+
+#### What is the team going to do next week?
+
+We will be giving the last touch to the code integration and finish the deployement
+
+#### What are the current blockers/challenges the team is facing?
+
+The challenge which we are facing for this week are a few integration discrepencies. We will work on resolving them before the final deployement.
+
+#### Date: 11-14-2017  
+
+Duration: 3 hours 
+
+Noted by: Pooja Shivasharanappa
+
+Agenda:
+Discussed regarding 
+
+Outcome:
+* Integrated 5 modules.
+* Working on partition tolerance 
+
+#### What did the team do the past week? 
+The team integrated the 5 modules.
+
+#### What is the team going to do next week?
+
+We are working on partition tolerance of mongo instance.
+
+#### What are the current blockers/challenges the team is facing?
+
+The challenge which we are facing for this week is how to use the voter to decide on bringing up the secondary mongo instance when primary fails.
+
 

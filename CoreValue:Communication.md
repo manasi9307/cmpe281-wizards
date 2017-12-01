@@ -30,3 +30,12 @@ The team has been continuously discussing about the implementation of their resp
 Week-6
 
 The team has been communicating regularly about the implementation of their respective module. We discussed about the issues faced by each during implementation and figured out methods to resolve them. We aslo discussed about integration of the modules and how they woulld interact with each other to handle user requests.
+
+Week-7
+
+The team has been discussing how to integrate each of the modules. We also discussed on how to deploy the backend on node clusters and make sure it is partition tolerant. We have been meeting once a week and discuccing each others progress with the implementation and the integration.
+
+Week-8
+
+The team has been discussing about deployment of aplication on AWS and setting up the environment to run the application.
+We have been continuosly communicationg for remainder of the integration. We have individually researched and communicated about the approaches to handle node failure.

@@ -1,22 +1,15 @@
 var ejs = require("ejs");
 var mongo = require("./mongo");
-var mongoURL = "mongodb://localhost:27017/project281";
+var mongoPayment = "mongodb://34.215.212.195:27017,35.166.169.211:27017,52.38.136.191:27017/project281?replicaSet=rs0";
 
+var user='',cart='',type='';
 function check(req,res){
-    mongo.connect(mongoURL, function(){
-        console.log('Connected to mongo at: ' + mongoURL);
-        var col1 = mongo.collection('cart_details');
-        
-        col1.findOne({user_id: 1,cart_id:1}, function(err, cart){
-            if (cart) {
-           	console.log("USER: "+cart.total);
-           	res.render('payment.ejs',{ total: cart.total });
-            } else {
-            	res.render('error.ejs');
-            }
-        });
-    });  
+
 }
 
+function getUser(uid,cid,type){
+
+}
 
 exports.payment=check;
+exports.getUser=getUser;

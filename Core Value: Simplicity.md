@@ -27,3 +27,8 @@ We decided to create a master-test branch to integrate all our changes and test 
 Week 6:
 We decided to integrate all the code written so far so that future development can be syncronized. 
 
+Week 7:
+We decided we'll deploy the code before we continue development and focus on load balancing the application.
+
+Week 8:
+We decided to keep the node app in one ec2 instance and load balance an autoscale the database.
