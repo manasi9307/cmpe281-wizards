@@ -1,7 +1,10 @@
 var ejs = require("ejs");
 var mongo = require("./mongo");
 var mongoPayment = "mongodb://34.215.212.195:27017,35.166.169.211:27017,52.38.136.191:27017/project281?replicaSet=rs0";
+var mongoM = require("./mongoM");
+var mongoUser_Cart = "mongodb://52.8.19.39:27017,13.56.167.225:27017,13.56.67.12:27017/project281?replicaSet=rs0";
 var ObjectId = require('mongodb').ObjectID;
+
 function updatestatus(req,res){
 	var mode=req.param("mode");
 	var cnumber=req.param("cardno");
@@ -15,7 +18,8 @@ console.log(mode+cnumber);
         col1.insertOne(newbill, function(err, rest) {
             if (err) throw err;
             else{
-                var col2 = mongo.collection('cart_details');
+							mongoM.connect(mongoUser_Cart, function(){
+                var col2 = mongoM.collection('cart_details');
                console.log("QUERY CHECK: "+cid);
                 col2.updateOne({"cart_id":cid}, {"$set":{"status": "closed"}}, function(err, results){
 									console.log("CHECK UPDATE:---> "+results);
@@ -26,7 +30,7 @@ console.log(mode+cnumber);
                     	res.render('error.ejs');
                     }
                 });
-
+});
             }
             });
 

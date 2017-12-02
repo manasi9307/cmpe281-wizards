@@ -1,10 +1,11 @@
 
 var ejs = require("ejs");
 var mongo = require("./mongo");
+var mongoM = require('./mongoM');
 //var mongoProduct = "mongodb://13.57.119.118:27017,52.52.150.229:27017,52.8.128.10:27017/project281?replicaSet=rs0";
-var mongoProduct = "mongodb://34.215.212.195:27017,35.166.169.211:27017,52.38.136.191:27017/project281?replicaSet=rs0";
-var mongoCart='mongodb://34.215.212.195:27017/project281';
-var mongoOrder = 'mongodb://34.215.212.195:27017/project281';
+var mongoProduct = "mongodb://13.57.119.118:27017,52.52.150.229:27017,52.8.128.10:27017/project281?replicaSet=rs0";
+var mongoUser_Cart="mongodb://52.8.19.39:27017,13.56.167.225:27017,13.56.67.12:27017/project281?replicaSet=rs0";
+var mongoOrder =  "mongodb://35.166.3.73:27017,34.212.97.198:27017,34.215.168.78:27017/project281?replicaSet=rs0";
 
 var ObjectId = require('mongodb').ObjectID;
 var cartItems=[];
@@ -113,24 +114,28 @@ function deleteFromCart(req,res){
 
 function confirmOrder(req,res){
   cart.cart(cartItems,uid,cid);
-  var usercol = mongo.collection('user_details');
-	var cartcol = mongo.collection('cart_details');
 	var ty='';
+console.log("BACK IN MENUJS");
+mongoM.connect(mongoUser_Cart, function(){
+	var usercol = mongoM.collection('user_details');
+	var cartcol = mongoM.collection('cart_details');
 	usercol.findOne({ _id: ObjectId(uid) }, function(err,user){
 		if (user) {
 			ty=user.flag;
 			console.log("FLAG CHECK: "+ty);
 			if(ty==0){
 
-				cartcol.findOne({cart_id:Number(cid)},function(er,t){
-					console.log("TOTAL:-------"+t.total);
-		res.render('payment.ejs',{uid:uid,cid:cid,total: t.total});
-		    });
+	cartcol.findOne({cart_id:Number(cid)},function(er,t){
+		console.log("TOTAL:-------"+t.total);
+res.render('payment.ejs',{uid:uid,cid:cid,total: t.total});
+});
 		}
 			else
 			res.render('cart.ejs');
 		}
 	});
+
+});
 }
 
 exports.menus=menus;
